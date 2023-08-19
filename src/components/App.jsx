@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
-import Searchbar from 'components/Searchbar/Searchbar';
+import Searchbar from './Searchbar/Searchbar';
 
 import ImageGallery from './ImageGallery/ImageGallery';
 
@@ -9,8 +8,7 @@ import Loader from './Loader/Loader';
 
 import Button from './Button/Button';
 
-import pixabayApi from 'components/Api/pixabay-api';
-
+import pixabayApi from './api/pixabay-api';
 
 class App extends Component {
   state = {
@@ -111,7 +109,6 @@ class App extends Component {
     return (
       <div className="App">
         {/* В props передаем метод, который будет отрабатываться при submit формы(Searchbar. ) */}
-        onChange={this.handleChange}
         <Searchbar onSubmit={this.changeQuery} />
         {/* ImageGallery */}
         <ImageGallery gallery={gallery} />
@@ -129,6 +126,5 @@ class App extends Component {
     );
   }
 }
-  
-export default App;
 
+export default App;
